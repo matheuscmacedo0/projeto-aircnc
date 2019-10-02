@@ -1,5 +1,8 @@
 const express = require('express');
 
+//importa o arquivo routes.js
+const routes = require('./routes');
+
 const app = express();
 
 //GET POST PUT DELETE
@@ -9,8 +12,6 @@ const app = express();
 // req.body = acessar corpo da requisição (para criação e edição)
 
 app.use(express.json());
-app.post('/users',(req, res) =>{
-    return res.json(req.body);
-});
+app.use(routes);
 
 app.listen(3333);
