@@ -1,9 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 //importa o arquivo routes.js
 const routes = require('./routes');
 
 const app = express();
+
+mongoose.connect('mongodb+srv://matheus:9898juice@matheus-fscmu.mongodb.net/omnistack?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 //GET POST PUT DELETE
 
